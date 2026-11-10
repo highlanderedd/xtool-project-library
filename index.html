@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="The Celtic Creations library for xTool laser projects, tutorials, and downloads.">
   <meta name="theme-color" content="#122d24">
-  <title>Celtic Creations | xTool Project Library</title>
+  <title>Celtic Creations | xTool Information and Projects</title>
   <style>
     :root {
       color-scheme: light;
@@ -40,6 +40,8 @@
     .guides { margin-top: 2.75rem; }
     .guide-nav { display: flex; flex-wrap: wrap; gap: .5rem 1.2rem; margin-bottom: 1rem; }
     .guide-nav a { color: #215c45; font-weight: 700; text-underline-offset: .15em; }
+    .events-note { margin: 0 0 1rem; }
+    .event-date { font-weight: 700; }
     footer { border-top: 1px solid #ded7c6; padding-block: 1rem; font-size: .9rem; }
   </style>
 </head>
@@ -47,8 +49,9 @@
   <header>
     <div class="wrap">
       <p class="brand">Celtic Creations</p>
-      <h1>xTool Project Library</h1>
+      <h1>xTool Information and Projects</h1>
       <p class="intro">Explore public projects, tutorials, and downloadable files made for xTool machines.</p>
+      <p><a href="#europe-events" style="color: #f0cb8c">Upcoming xTool events in Europe</a></p>
     </div>
   </header>
   <main class="wrap">
@@ -119,7 +122,57 @@
         </article>
       </div>
     </section>
+    <section class="guides" aria-labelledby="europe-events">
+      <h2 id="europe-events">Upcoming xTool events in Europe</h2>
+      <p class="events-note">Dates and xTool participation checked on <time datetime="2026-11-10">10 November 2026</time>. Confirm opening hours, entry and any workshop booking with the organiser before travelling.</p>
+      <div class="library" id="europe-event-list">
+        <article data-event-end="2026-11-20">
+          <h3><a href="https://www.xtool.live/en/trade-fairs/">Formnext</a></h3>
+          <p class="event-date">17–20 November 2026 · Frankfurt, Germany</p>
+          <p>Messe Frankfurt, hall 11.0, stand B70. Listed by xTool Live.</p>
+        </article>
+        <article data-event-end="2026-11-22">
+          <h3><a href="https://fr.xtool.com/pages/evenements-xtool-france">Créations &amp; savoir-faire</a></h3>
+          <p class="event-date">18–22 November 2026 · Paris, France</p>
+          <p>Paris Expo Porte de Versailles, hall 6, stand E021. xTool lists the WonderPress, F2 and M2 among the machines on show.</p>
+        </article>
+        <article data-event-end="2026-11-27">
+          <h3><a href="https://laserlink.de/laserlink-messetermine/">Laserlink Open House</a></h3>
+          <p class="event-date">27 November 2026 · Butzbach, Germany</p>
+          <p>Retailer demos include the WonderPress, X1 and F2 Ultra UV.</p>
+        </article>
+        <article data-event-end="2026-11-27">
+          <h3><a href="https://www.yandles.co.uk/event/black-friday-featuring-live-xtool-demonstrations/">Yandles live xTool demos</a></h3>
+          <p class="event-date">27 November 2026 · Martock, UK</p>
+          <p>Yandles Toolshop, 10:00–16:00 local time. Free entry. Live demos of the M2, F2 and P3.</p>
+        </article>
+        <article data-event-end="2026-12-01">
+          <h3><a href="https://fr.xtool.com/blogs/actualites/xtool-tech-for-retail-2026-personnalisation-magasin">Tech for Retail</a></h3>
+          <p class="event-date">30 November–1 December 2026 · Paris, France</p>
+          <p>Paris Expo Porte de Versailles, hall 7.2, stand L40. xTool is showcasing in-store personalisation.</p>
+        </article>
+        <article data-event-end="2027-01-14">
+          <h3><a href="https://2026.salon-cprint.es/es/lista-de-expositores/x-toolxlbexx62">C!Print Madrid</a></h3>
+          <p class="event-date">12–14 January 2027 · Madrid, Spain</p>
+          <p>IFEMA Madrid. The organiser lists xTool at stand K02.</p>
+        </article>
+        <article data-event-end="2027-02-27">
+          <h3><a href="https://laserlink.de/laserlink-messetermine/">Didacta</a></h3>
+          <p class="event-date">23–27 February 2027 · Hannover, Germany</p>
+          <p>Laserlink lists xTool demonstrations, including the X1 and F2 Ultra UV.</p>
+        </article>
+      </div>
+      <p id="europe-events-empty" hidden>No upcoming dates remain in this list. Check the xTool links below for new announcements.</p>
+      <p class="source-note">Belgium, Italy, Denmark, Norway and Sweden: no upcoming xTool dates verified as of 10 November 2026.</p>
+      <p class="source-note"><a href="https://www.xtool.eu/pages/xtool-makerfest-tour">xTool Europe MakerFest Tour</a> · <a href="https://support.xtool.com/demo-room/service?campaign=xtool_squad&amp;type=demoPreSale">Find an xTool demo near you</a></p>
+    </section>
   </main>
   <footer><div class="wrap">Celtic Creations</div></footer>
+  <script>
+    const eventCards = Array.from(document.querySelectorAll("[data-event-end]"));
+    const today = new Intl.DateTimeFormat("sv-SE", { timeZone: "Europe/Paris", dateStyle: "short" }).format(new Date());
+    eventCards.forEach(card => { card.hidden = card.dataset.eventEnd < today; });
+    document.querySelector("#europe-events-empty").hidden = eventCards.some(card => !card.hidden);
+  </script>
 </body>
 </html>
