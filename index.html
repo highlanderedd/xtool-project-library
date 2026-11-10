@@ -32,7 +32,11 @@
     .library { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); }
     article { background: #fffcf4; border: 1px solid #ded7c6; border-radius: .75rem; padding: 1.35rem; }
     h3 { margin: 0 0 .5rem; color: #214636; }
-    article p { margin: 0; }
+    article ul { margin: 0; padding: 0; list-style: none; }
+    article li + li { border-top: 1px solid #ded7c6; margin-top: .85rem; padding-top: .85rem; }
+    article a { color: #215c45; font-weight: 700; text-underline-offset: .15em; }
+    article p { margin: .2rem 0 0; font-size: .93rem; }
+    .source-note { margin: 1.25rem 0 0; font-size: .9rem; }
     footer { border-top: 1px solid #ded7c6; padding-block: 1rem; font-size: .9rem; }
   </style>
 </head>
@@ -41,26 +45,35 @@
     <div class="wrap">
       <p class="brand">Celtic Creations</p>
       <h1>xTool Project Library</h1>
-      <p class="intro">A home for Celtic Creations laser projects, tutorials, and downloadable files.</p>
+      <p class="intro">Explore public projects, tutorials, and downloadable files made for xTool laser machines.</p>
     </div>
   </header>
   <main class="wrap">
     <h2>Explore the library</h2>
     <div class="library">
-      <!-- Add published entries and their links to the appropriate section. -->
       <article>
         <h3>Projects</h3>
-        <p>Project entries will appear here as they are added.</p>
+        <ul>
+          <li><a href="https://www.atomm.com/project/43243-st-patricks-day-sitter-shamrock-decoration">Shamrock tabletop decoration</a><p>xTool M1 Ultra · stephcreated on Atomm · Basswood project with instructions and original files.</p></li>
+          <li><a href="https://www.atomm.com/project/82361-wood-coaster">Engraved wood coaster</a><p>xTool M1 Ultra 10W · Haru Studio on Atomm · Hexagonal coaster with an XCS file.</p></li>
+        </ul>
       </article>
       <article>
         <h3>Tutorials</h3>
-        <p>Tutorials will appear here as they are added.</p>
+        <ul>
+          <li><a href="https://support.xtool.com/article/3224">Your first xTool laser project</a><p>Official xTool video covering setup in xTool Studio, preparing a design, and running a first engraving.</p></li>
+          <li><a href="https://support.xtool.com/article/2520">Import SVG and DXF in xTool Studio</a><p>Official xTool guide to bringing in vectors and checking their scale.</p></li>
+        </ul>
       </article>
       <article>
         <h3>Downloads</h3>
-        <p>Downloadable files will appear here as they are added.</p>
+        <ul>
+          <li><a href="https://support.xtool.com/article/1328">Stone coaster project files</a><p>xTool S1 · Four XCS files with an official engraving walkthrough.</p></li>
+          <li><a href="https://support.xtool.com/article/1112">Basswood phone holder project files</a><p>xTool S1 · Official XCS files for the 10W, 20W, and 40W modules.</p></li>
+        </ul>
       </article>
     </div>
+    <p class="source-note">Project links take you to the original publisher. Check the machine model, laser module, and material before using a project's settings.</p>
   </main>
   <footer><div class="wrap">Celtic Creations</div></footer>
 </body>
